@@ -7,7 +7,7 @@
       xmlns:p="http://primefaces.org/ui"
       > 
       
-<!-- Para ingresar las etiquetas de "placeholder" se debe ingresar la referencias a: (xmlns:a="http://xmlns.jcp.org/jsf/passthrough") -->>
+<!-- Para ingresar las etiquetas de "placeholder" se debe ingresar la referencias a: (xmlns:a="http://xmlns.jcp.org/jsf/passthrough") -->
 
 <h:head>
 	<meta charset="utf-8" />
@@ -55,8 +55,12 @@
 								<h:inputSecret id="textoContrasenia"  styleClass="form-control" required="true" requiredMessage="Debe ingresar la contraseña" a:placeholder="Contraseña" />
 							</div>
 						</div>
-						<p:commandButton id="botonIniciarSesion" styleClass="btn btn-primary" value="Iniciar Sesión" update=":msj" actionListener="#{usuarioMB.guardarUsuario()}"></p:commandButton>
+						<h:commandButton update=":msj" id="botonIniciarSesion" styleClass="btn btn-primary" value="Iniciar Sesion" action="#{resumeBean.showPreview}" />
 					</h:form>
+					<!-- actionListener="#{usuarioMB.guardarUsuario()}" -->
+					<!-- 
+					
+					 -->
 				</div>
 			</div>
 		</div>
