@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+     xmlns:t="org.apache.myfaces.custom.date.HtmlDateRenderer" 
+               
+    >      
+      
+      
+
+<h:head>
+
+<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<script type="text/javascript" src="resources/js/jquery-2.1.4.js"></script>
+	<script type="text/javascript" src="resources/bootstrap/js/bootstrap.js"></script>
+	<link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap.css" />
+	
+	<script type="text/javascript" src="resources/bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="resources/bootstrap/css/bootstrap-datetimepicker.min.css" />
+	
+	
+	
+	
+	<script type="text/javascript">
+		$(document).ready(function() {
+			//Para obtener un elemento JSF desde JavaScript se le debe agregrar al elemento binding="#{textoUsuario}"
+			var usuario = document.getElementById('#{textoUsuario.clientId}');
+			$(usuario).focus();
+			
+		})
+	</script>
+	
+	
+	
+	
+	 
+</h:head> 
+<body> 
+
+<div class="container-fluid">
+		<div class="page-header text-center">
+		  <h1>Registro de Usuario</h1>
+		</div>
+		<div class="col-sm-8 col-md-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Registro de Usuario</div>
+				<div class="panel-body">
+				
+			  		<h:form styleClass="form">
+						<div class="form-group">
+							<h:outputLabel value="Nickname" styleClass="sr-only" for="nickUsuario" />
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								</div>
+							  <h:inputText id="nickUsuario" styleClass="form-control" binding="#{nickUsuario}" required="true" requiredMessage="Debe ingresar un nickname" a:placeholder="Nickname"/>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<h:outputLabel value="Nombre" styleClass="sr-only" for="nombreUsuario" />
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								</div>
+							  <h:inputText id="nombreUsuario" styleClass="form-control" binding="#{nombreUsuario}" required="true" requiredMessage="Debe ingresar un nombre" a:placeholder="Nombre"/>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<h:outputLabel value="Apellido" styleClass="sr-only" for="apellidoUsuario" />
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+								</div>
+							  <h:inputText id="apellidoUsuario" styleClass="form-control" binding="#{apellidoUsuario}" required="true" requiredMessage="Debe ingresar su apellido" a:placeholder="Apellido"/>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<h:outputLabel value="Correo" styleClass="sr-only" for="correoUsuario" />
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+								</div>
+							  <h:inputText id="correoUsuario" styleClass="form-control" binding="#{correoUsuario}" required="true" requiredMessage="Debe ingresar su correo electrónico" a:placeholder="E-mail"/>
+							</div>
+						</div>
+										
+												
+						<div class="form-group">
+							<h:outputLabel value="Contraseña:" styleClass="sr-only" for="registroContrasenia" />
+							<div class="input-group">
+								<div class="input-group-addon">
+									<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+								</div>
+								<h:inputSecret id="textoContrasenia"  styleClass="form-control" required="true" requiredMessage="Debe ingresar la contraseña" a:placeholder="Contraseña" />
+							</div>
+						</div>
+										
+						
+						
+						
+
+<div class="well">
+  <div id="datetimepicker1" class="input-append date">
+    <input data-format="dd/MM/yyyy hh:mm:ss" type="text"></input>
+    <span class="add-on">
+      <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+      </i>
+    </span>
+  </div>
+</div>
+
+
+
+   
+   
+
+ 
+  
+
+
+
+
+    				
+						
+						
+						<h:commandButton update=":msj" id="botonRegistrarUsuario" styleClass="btn btn-primary" value="Registrar Usuario" action="#{resumeBean.showPreview}" />
+					</h:form>
+					<!-- actionListener="#{usuarioMB.guardarUsuario()}" -->
+					<!-- 
+					
+					 -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+</body> 
+</html>
